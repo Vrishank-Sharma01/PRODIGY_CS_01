@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <style>
+        *{
+    padding:20px;
+}
+body{
+    background:rgba(116, 161, 181, 0.385);
+}
+.box{
+    border: 2px solid yellow;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 400px;
+    margin-right: 400px;
+    background: rgba(218, 155, 173, 0.264);
+}
+#shift{
+    border: 2px solid black;
+    margin-left: 200px;
+}
+#message{
+    width: 400px;
+    margin-left: 100px;
+}
+#submit{
+    background: green;
+    color: #fff;
+    border-radius: 30px;
+    transition: background 0.5s;
+    padding: 8px,30px;
+    display: inline-block;
+    margin: 30px 0;
+}
+    </style>
+</head>
+<body>
+    
+    <h1>Caesar Cipher Encrypt/Decrypt</h1>
+<div class="box">
+    <form method="POST">
+        <label for="choice">Choose an option:</label><br>
+        <input type="radio" id="encrypt" name="choice" value="encrypt" required>
+        <label for="encrypt">Encrypt</label><br>
+        <input type="radio" id="decrypt" name="choice" value="decrypt" required>
+        <label for="decrypt">Decrypt</label><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="shift">Shift value:</label><br>
+        <input type="number" id="shift" name="shift" required><br><br>
+
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</div>
+    {% if result %}
+    <h2>Result:</h2>
+    <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
